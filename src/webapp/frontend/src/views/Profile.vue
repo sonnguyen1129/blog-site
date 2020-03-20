@@ -5,13 +5,7 @@
       {{test}}
     </b-row>
     <b-row>
-      {{test1}}
-    </b-row>
-    <b-row>
-      {{test2}}
-    </b-row>
-    <b-row>
-      {{token}}
+      {{username}}
     </b-row>
   </div>
 </template>
@@ -27,16 +21,11 @@ import { userService } from '@/services';
 })
 export default class Profile extends Vue {
   private test: string = 'No data';
-  private test1: string = 'No data';
-  private test2: string = 'No data';
-  private test3: string = 'No data';
-  private token: string|null = '';
+  private username: string = '';
 
   private created() {
     this.getUserBoard();
-    this.getModeratorBoard();
-    this.getAdminBoard();
-    this.token = localStorage.getItem('jwttoken') ? localStorage.getItem('jwttoken'): 'No token';
+    this.username = this.axios.prototype.getUserName();
   }
 
   private getUserBoard() {
@@ -46,19 +35,6 @@ export default class Profile extends Vue {
     })
   }
 
-  private getModeratorBoard() {
-    userService.getModeratorBoard()
-    .then((res: any) => {
-      this.test1 = res.data;
-    })
-  }
-
-  private getAdminBoard() {
-    userService.getAdminBoard()
-    .then((res: any) => {
-      this.test2 = res.data;
-    })
-  }
 
 }
 </script>

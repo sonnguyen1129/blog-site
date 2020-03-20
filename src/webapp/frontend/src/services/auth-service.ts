@@ -9,10 +9,8 @@ class AuthService extends Vue {
   public signIn(user: UserDTO): AxiosPromise<UserDTO> {
     return Vue.axios.post<UserDTO>(this.URL_API + '/sign-in', user)
       .then((res: any) => {
-        this.axios.prototype.setUserInfo(res.data.token)
-        // if (res.data.accessToken) {
-        //   localStorage.setItem('user', JSON.stringify(res.data));
-        // }
+        this.axios.prototype.setUserInfo(res.data.token);
+        localStorage.setItem('username', res.data.username);
         return res.data;
       })
   }

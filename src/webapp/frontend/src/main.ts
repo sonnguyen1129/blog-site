@@ -44,8 +44,8 @@ axios.prototype.loadHeaderInfo = function() {
 };
 axios.prototype.loadHeaderInfo();
 
-axios.prototype.hasUserInfo = function() {
-  return (axios.defaults.headers.common.Authorization != null) ? true : false;
+axios.prototype.getUserName = function() {
+  return localStorage.getItem('username') ? localStorage.getItem('username') : false;
 };
 
 // set user infomation
@@ -57,6 +57,7 @@ axios.prototype.setUserInfo = function (token: string) {
 
 // delete all user information of axios
 axios.prototype.deleteUserInfo = function(token: string) {
+  localStorage.removeItem('username');
   localStorage.removeItem(token);
   delete axios.defaults.headers.common.Authorization;
 }

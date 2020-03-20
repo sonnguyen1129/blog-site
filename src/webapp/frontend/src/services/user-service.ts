@@ -1,7 +1,6 @@
 /* eslint-disable */
 import Vue from 'vue';
 import { AxiosPromise } from 'axios';
-// import authHeader from './auth-header';
 
 class UserService extends Vue {
   private ROOT_API = process.env.VUE_APP_API_URL + '/api/test';  // Root api 

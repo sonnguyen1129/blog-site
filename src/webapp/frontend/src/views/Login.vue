@@ -30,23 +30,20 @@ export default class Login extends Vue {
   private mounted() {
   }
 
-  private loggedIn() {
-    return this.$store.state.status.loggedIn;
-  }
-
   private onClickLogin() {
     this.isLoading = true;
     if (this.userLogin.username && this.userLogin.password) {
       authService.signIn(this.userLogin)
       .then((res: any) => {
-        console.log(res);
-        this.$router.push('profile');
+        this.$store.dispatch('setUsername', res.username);
+        this.$store.dispatch('setRole', res.roles[0]);
+        this.$router.push('home');
       })
       .catch((err: any) => {
-        console.log(err)
       })
     }
   }
+
 }
 </script>
 <style lang='scss' scoped>
