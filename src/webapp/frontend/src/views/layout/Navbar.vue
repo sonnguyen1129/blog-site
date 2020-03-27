@@ -30,9 +30,17 @@
             <template v-slot:button-content>
               <em>{{userName}}</em>
             </template>
-            <b-dropdown-item to="profile">Profile</b-dropdown-item>
+            <b-dropdown-item to="/new-post">New Post</b-dropdown-item>
+            <b-dropdown-item to="/profile">Profile</b-dropdown-item>
             <b-dropdown-item href="#" @click="logout">Sign Out</b-dropdown-item>
           </b-nav-item-dropdown>
+
+          <b-nav-item right to="/login" v-if="!userName">
+            Login
+          </b-nav-item>
+          <b-nav-item right to="/register" v-if="!userName">
+            Register
+          </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -43,6 +51,7 @@
 /* eslint-disable */
 import { Component, Vue } from 'vue-property-decorator'
 import { authService } from '@/services';
+import EventBus from '@/common/EventBus';
 
 @Component({
   components: {}
@@ -52,6 +61,14 @@ export default class Home extends Vue {
 
   private mounted() {
     this.userName = this.axios.prototype.getUserName();
+
+    EventBus.$on('logged', () => {
+      this.userName = this.axios.prototype.getUserName();
+    })
+
+    EventBus.$on('logout', () => {
+      this.userName = '';
+    })
   }
 
   private logout() {

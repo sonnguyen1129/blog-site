@@ -16,6 +16,7 @@ import { Component, Vue } from 'vue-property-decorator'
 import { UserDTO } from '@/models'
 
 import { authService } from '@/services'
+import EventBus from '@/common/EventBus';
 
 @Component({
   components: {
@@ -35,8 +36,6 @@ export default class Login extends Vue {
     if (this.userLogin.username && this.userLogin.password) {
       authService.signIn(this.userLogin)
       .then((res: any) => {
-        this.$store.dispatch('setUsername', res.username);
-        this.$store.dispatch('setRole', res.roles[0]);
         this.$router.push('home');
       })
       .catch((err: any) => {

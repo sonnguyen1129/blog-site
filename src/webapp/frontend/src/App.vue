@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Navbar/>
-    <h2>{{userName}}</h2>
     <div class="router-view">
       <router-view />
     </div>

@@ -14,6 +14,11 @@ Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(VueAxios, axios)
 
+// event bus
+import eventBus from '@/common/EventBus'
+Vue.prototype.$eventBus = eventBus
+
+// setting
 axios.interceptors.request.use((config) => {
   return config;
 }, (error) => {
