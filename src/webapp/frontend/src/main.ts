@@ -1,7 +1,8 @@
+// @ts-ignore
 import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import App from '@/App.vue'
+import router from '@/router'
+import store from '@/store'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -10,15 +11,30 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
+import i18n from '@/langs/i18n.ts';
+import CKEditor from '@ckeditor/ckeditor5-vue';
+Vue.use(CKEditor);
+
+import EventBus from '@/EventBus'
+Vue.prototype.$bus = EventBus
+
+// element ui
+import ElementUI from 'element-ui'
+import {
+  Select,
+  Button
+} from 'element-ui'
+
+Vue.component(Select.name, Select)
+Vue.component(Button.name, Button)
+Vue.use(ElementUI)
+
+//editor
+
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
 Vue.use(VueAxios, axios)
 
-// event bus
-import eventBus from '@/common/EventBus'
-Vue.prototype.$eventBus = eventBus
-
-// setting
 axios.interceptors.request.use((config) => {
   return config;
 }, (error) => {
@@ -40,16 +56,16 @@ axios.interceptors.response.use(
 );
 
 // set authorization when the web is run (global)
-axios.prototype.loadHeaderInfo = function() {
+axios.prototype.loadHeaderInfo = function () {
   // load user's info
-    const jwttoken = localStorage.getItem('jwttoken');
+  const jwttoken = localStorage.getItem('jwttoken');
   if (jwttoken) {
     axios.defaults.headers.common.Authorization = jwttoken;
   }
 };
 axios.prototype.loadHeaderInfo();
 
-axios.prototype.getUserName = function() {
+axios.prototype.getUserName = function () {
   return localStorage.getItem('username') ? localStorage.getItem('username') : false;
 };
 
@@ -61,7 +77,7 @@ axios.prototype.setUserInfo = function (token: string) {
 };
 
 // delete all user information of axios
-axios.prototype.deleteUserInfo = function(token: string) {
+axios.prototype.deleteUserInfo = function (token: string) {
   localStorage.removeItem('username');
   localStorage.removeItem(token);
   delete axios.defaults.headers.common.Authorization;
@@ -70,6 +86,6 @@ axios.prototype.deleteUserInfo = function(token: string) {
 new Vue({
   router,
   store,
-  // i18n,
+  i18n,
   render: (h) => h(App)
 }).$mount('#app')

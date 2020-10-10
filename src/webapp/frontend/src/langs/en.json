@@ -1,0 +1,53 @@
+{
+  "common" : {
+    "back": "Back",
+    "vn": "Vietnamese",
+    "en": "English",
+    "lang": "Language",
+    "login": "Sign in",
+    "username": "Username",
+    "password": "Password",
+    "nick_name": "Nick name",
+    "reset": "Reset",
+    "sign_up": "Sign Up",
+    "sign_out": "Sign Out",
+    "room": "Room",
+    "list_cha": "List Characters",
+    "list_room": "List rooms",
+    "wellcome": "Wellcome",
+    "join": "Join",
+    "detail": "Detail",
+    "character": "Character",
+    "cha_detail": "Character detail",
+    "user_detail": "User detail",
+    "add": "Add",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "delete": "Delete"
+  },
+  "warning": {
+    "login_required": "Login required",
+    "login_invalid": "Username or password invalid"
+  },
+  "nav": {
+    "title": "Wolverine"
+  },
+  "home": {
+    "join_now": "Join now ",
+    "cha_detail": "Character detail "
+  },
+  "room": {
+    "room_name": "Room name",
+    "room_number": "Number player",
+    "room_chat": "Chat room"
+  },
+  "admin": {
+    "create_room" : "Create new room",
+    "create_account": "Create new user",
+    "see_room": "Player can view detail"
+  },
+  "noti": {
+    "success": "Success",
+    "cancel_noti": "Cancelled"
+  }
+}

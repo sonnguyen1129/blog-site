@@ -1,7 +1,7 @@
 <template>
   <div class="post-sum">
     <b-row>
-      <!-- <b-img src="https://picsum.photos/300/150/?image=41" fluid alt="Fluid image"></b-img> -->
+      <b-img src="https://picsum.photos/300/150/?image=41" fluid alt="Fluid image"></b-img>
     </b-row>
     <b-row>
       <a href="">Donec rutrum congue leo eget malesuada.</a>

@@ -1,17 +1,30 @@
 <template>
   <div class="home">
+    <!-- <b-row class="feature text-center">
+      NEW
+    </b-row>
     <b-row>
-      <b-col lg="8">
+      <b-col sm="6">
         <b-row>
-          <b-col lg="6" v-for="item in listPosts" v-bind:key="item" class="mt-3">
+          Left
+        </b-row>
+      </b-col>
+      <b-col sm="6">
+        Right
+      </b-col>
+    </b-row> -->
+    <!-- <b-row>
+      <b-col lg="8">
+        <b-row v-for="item in listPosts" v-bind:key="item">
+          <b-col lg="6">
             <PostSummary />
           </b-col>
         </b-row>
       </b-col>
       <b-col lg="4">
-        <PostSummary />
+        b
       </b-col>
-    </b-row>
+    </b-row> -->
   </div>
 </template>
 
@@ -21,10 +34,12 @@ import { Component, Vue } from 'vue-property-decorator'
 import { authService } from '@/services'
 
 import PostSummary from '@/views/components/PostSummary.vue'
+import WebsocketGreetings from '@/views/websocket/WebsocketGreetings.vue'
 
 @Component({
   components: {
-    PostSummary
+    PostSummary,
+    WebsocketGreetings
   }
 })
 export default class Home extends Vue {
@@ -40,4 +55,8 @@ export default class Home extends Vue {
 </script>
 
 <style lang='scss'>
+.feature {
+  height: 20rem;
+  width: 100%;
+}
 </style>
