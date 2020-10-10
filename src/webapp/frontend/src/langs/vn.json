@@ -1,0 +1,53 @@
+{
+  "common" : {
+    "back": "Quay lại",
+    "vn": "Tiếng việt",
+    "en": "Tiếng anh",
+    "lang": "Ngôn ngữ",
+    "login": "Đăng nhập",
+    "username": "Tên đăng nhập",
+    "password": "Mật khẩu",
+    "nick_name": "Biệt danh",
+    "reset": "Reset",
+    "sign_up": "Đăng ký",
+    "sign_out": "Đăng xuất",
+    "room": "Phòng",
+    "list_cha": "Danh sách nhân vật",
+    "list_room": "Danh sách phòng",
+    "wellcome": "Chào mừng",
+    "join": "Vào",
+    "detail": "Chi tiết",
+    "character": "Nhân vật",
+    "cha_detail": "Chi tiết nhân vật",
+    "user_detail": "Chi tiết người chơi",
+    "add": "Thêm",
+    "submit": "Xác nhận",
+    "cancel": "Thoát",
+    "delete": "Xoá"
+  },
+  "warning": {
+    "login_required": "Yêu cầu đăng nhập",
+    "login_invalid": "Sai tên đăng nhập hoặc mật khẩu"
+  },
+  "nav": {
+    "title": "Masoi"
+  },
+  "home": {
+    "join_now": "Tham gia ngay ",
+    "cha_detail": "Chi tiết nhân vật "
+  },
+  "room": {
+    "room_name": "Tên phòng",
+    "room_number": "Số người",
+    "room_chat": "Phòng chat"
+  },
+  "admin": {
+    "create_room" : "Tạo phòng",
+    "create_account": "Tạo tài khoản mới",
+    "see_room": "Cấp quyền xem"
+  },
+  "noti": {
+    "success": "Thành công",
+    "cancel_noti": "Đã Huỷ"
+  }
+}

@@ -5,6 +5,7 @@
     <div class="router-view">
       <router-view />
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -12,15 +13,17 @@
 /* eslint-disable*/
 import { Component, Vue } from 'vue-property-decorator'
 import Navbar from '@/views/layout/Navbar.vue'
+import Footer from '@/views/layout/Footer.vue'
 @Component({
   components: {
-    Navbar
+    Navbar,
+    Footer
   }
 })
 export default class App extends Vue {
   private userName: string = '';
   private created() {
-    this.userName = this.$store.state.userName ? this.$store.state.userName : 'Not logged';
+    // this.userName = this.$store.state.userName ? this.$store.state.userName : 'Not logged';
   }
 }
 </script>
@@ -29,7 +32,9 @@ export default class App extends Vue {
   @import url('styles/style.scss');
 
   .router-view {
+    text-align: left;
     margin-left: 10%;
     margin-right: 10%;
+    min-height: 80%;
   }
 </style>
